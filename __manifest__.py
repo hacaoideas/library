@@ -24,8 +24,11 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/library_view.xml',
+        'views/book_view.xml',
+        'views/css_loader.xml',
         'security/library_security.xml',
         'security/ir.model.access.csv',
+
     ],
     # only loaded in demonstration mode
     'demo': [
