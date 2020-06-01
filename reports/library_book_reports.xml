@@ -1,5 +1,13 @@
 <?xml version="1.0" ?>
 <odoo>
+    <report id="action_library_book_report_web"
+            string="Library Books Web"
+            model="library.book"
+            report_type="qweb-html"
+            name="library.report_library_book_template"/>
+
+
+
 <!--    This is the skeleton-->
     <report id="action_library_book_report"
             string="Library Books"
@@ -44,11 +52,8 @@
                             </div>
                         </t>
                     </div>
-
-
                 </div>
             </t>
-
         </t>
     </template>
 

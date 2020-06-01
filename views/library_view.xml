@@ -14,4 +14,9 @@
             name="Books"
             parent="menu_library"
             action="action_library_book"/>
+
+<!--  <menuitem id="menu_book_report"-->
+<!--            name="Books Report Web"-->
+<!--            parent="menu_library"-->
+<!--            action="action_print_book_reports_web"/>-->
 </odoo>
