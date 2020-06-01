@@ -29,6 +29,7 @@
         'views/book_list_template.xml',
         'security/library_security.xml',
         'security/ir.model.access.csv',
+        'reports/library_book_reports.xml',
 
     ],
     # only loaded in demonstration mode

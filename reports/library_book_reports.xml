@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<odoo>
+<!--    This is the skeleton-->
+    <report id="action_library_book_report"
+            string="Library Books"
+            model="library.book"
+            report_type="qweb-pdf"
+            name="library.report_library_book_template"/>
+
+<!--    Below is the template-->
+    <template id="report_library_book_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="container">
+                        <div class="row bg-primary">
+                            <div class="col-3">Title</div>
+                            <div class="col-2">Publisher</div>
+                            <div class="col-2">Date</div>
+                            <div class="col-3">Publisher Address</div>
+                            <div class="col-2">Authors</div>
+                        </div>
+                        <t t-foreach="docs" t-as="o">
+                            <div class="row">
+                                <div class="col-3">
+                                    <h4><span t-field="o.name"/></h4>
+                                </div>
+                                <div class="col-2">
+                                    <span t-field="o.publisher_id"/>
+                                </div>
+                                <div class="col-2">
+                                    <span t-field="o.date_published"
+                                        t-options="{'widget': 'date'}"/>
+                                </div>
+                                <div class="col-3">
+                                    <div t-field="o.publisher_id"
+                                         t-options='{"widget": "contact",
+                                         "field": ["address", "email", "phone", "website"],
+                                         "no_marker": true}'/>
+                                </div>
+                                <div class="col-2">
+<!--                                    render author-->
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+
+
+                </div>
+            </t>
+
+        </t>
+    </template>
+
+</odoo>
