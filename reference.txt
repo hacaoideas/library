@@ -1,0 +1,4 @@
+
+This is the best technical document
+https://doc.odoo.com/trunk/server/03_module_dev_04
+

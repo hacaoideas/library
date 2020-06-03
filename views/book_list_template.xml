@@ -3,13 +3,24 @@
     <template id="book_list_template" name="Book List">
         <div id="wrap" class="container">
             <h1>Books</h1>
-            <t t-foreach="books" t-as="book">
-                <div class="row">
-                    <span t-field="book.name" />,
-                    <span t-field="book.date_published" />,
-                    <span t-field="book.publisher_id" />
-                </div>
-            </t>
+            <table border="1">
+                    <tr style="font-weight: bold;">
+                        <td>Title</td>
+                        <td>Date Published</td>
+                        <td>Publisher ID</td>
+                        <td>Is Vailable</td>
+                        <td>ISBN</td>
+                    </tr>
+                <t t-foreach="books" t-as="book">
+                    <tr>
+                        <td><span t-field="book.name" /></td>,
+                        <td><span t-field="book.date_published" /></td>,
+                        <td><span t-field="book.publisher_id" /></td>,
+                        <td><span t-field="book.is_available"/></td>,
+                        <td><span t-field="book.isbn"/></td>
+                    </tr>
+                </t>
+                </table>
         </div>
     </template>
 </odoo>
