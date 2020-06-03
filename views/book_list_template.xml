@@ -2,7 +2,7 @@
 <odoo>
     <template id="book_list_template" name="Book List">
         <div id="wrap" class="container">
-            <h1>Books</h1>
+<!--            <h1>Books</h1>-->
             <table border="1">
                     <tr style="font-weight: bold;">
                         <td>Title</td>
@@ -11,13 +11,13 @@
                         <td>Is Vailable</td>
                         <td>ISBN</td>
                     </tr>
-                <t t-foreach="books" t-as="book">
+                <t t-foreach="books" t-as="o">
                     <tr>
-                        <td><span t-field="book.name" /></td>,
-                        <td><span t-field="book.date_published" /></td>,
-                        <td><span t-field="book.publisher_id" /></td>,
-                        <td><span t-field="book.is_available"/></td>,
-                        <td><span t-field="book.isbn"/></td>
+                        <td><span t-field="o.name" /></td>,
+                        <td><span t-field="o.date_published" /></td>,
+                        <td><span t-field="o.publisher_id" /></td>,
+                        <td><span t-field="o.is_available"/></td>,
+                        <td><span t-field="o.isbn"/></td>
                     </tr>
                 </t>
                 </table>

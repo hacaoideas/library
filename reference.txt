@@ -2,3 +2,6 @@
 This is the best technical document
 https://doc.odoo.com/trunk/server/03_module_dev_04
 
+This is also a good source
+https://odooforbeginnersblog.wordpress.com/2017/03/02/how-to-use-api-constrains-decorated-method/
+
