@@ -6,7 +6,7 @@
             report_type="qweb-html"
             name="library.report_library_book_template"/>
 
-
+<!--report calls template-->
 
 <!--    This is the skeleton-->
     <report id="action_library_book_report"
@@ -15,11 +15,70 @@
             report_type="qweb-pdf"
             name="library.report_library_book_template"/>
 
+    <!--    This is the skeleton-->
+    <report id="action_library_book_report_play_ground"
+            string="Library Play Ground"
+            model="library.book"
+            report_type="qweb-pdf"
+            name="library.play_ground"/>
+
+    <report id="action_library_book_report_play_ground_2"
+            string="Library Play Ground 2"
+            model="library.book"
+            report_type="qweb-pdf"
+            name="library.play_ground_2"/>
+
+    <template id="child_template">
+        <div class="page">
+            <div class="container" style="text-align: center;">
+                 <t t-if="o.name=='This is a test book'">
+                <p>Yes!</p>
+            </t>
+            </div>
+
+        </div>
+    </template>
+
+    <template id="play_ground_2">
+        <t t-foreach="docs" t-as="o">
+        <t t-call="library.child_template"/>
+        </t>
+    </template>
+
+    <template id="play_ground">
+        <div class="page">
+            <h>This is a test</h>
+            <p t-if="1==0">Hello</p>
+            <p t-if="user.login=='admin'">Hello Tam</p>
+            <t t-set="variable_a" t-value="120"/>
+            <t t-foreach="[1,2,3,4]" t-as="o">
+                <span><t t-esc="o"></t></span>
+                <span><t t-esc="o_index"></t></span>
+<!--                This is how we do page break-->
+                <br></br>
+                <span><t t-esc="variable_a"></t></span>
+                <br>
+                </br>
+
+            </t>
+            <t t-set="text" t-value="120"/>
+            <p><t t-esc="var"></t></p>
+
+            <div>
+                <t t-foreach="docs" t-as="o">
+                    <span t-esc="o.name"/>
+                </t>
+            </div>
+        </div>
+    </template>
+
+
 <!--    Below is the template-->
     <template id="report_library_book_template">
         <t t-call="web.html_container">
             <t t-call="web.external_layout">
                 <div class="page">
+<!--                    this is a fixed width container of the page-->
                     <div class="container">
                         <div class="row bg-primary">
                             <div class="col-3">Title</div>
@@ -31,17 +90,17 @@
                         <t t-foreach="docs" t-as="o">
                             <div class="row">
                                 <div class="col-3">
-                                    <h4><span t-field="o.name"/></h4>
+                                    <h4><span t-esc="o.name"/></h4>
                                 </div>
                                 <div class="col-2">
                                     <span t-field="o.publisher_id"/>
                                 </div>
                                 <div class="col-2">
-                                    <span t-field="o.date_published"
+                                    <span t-esc="o.date_published"
                                         t-options="{'widget': 'date'}"/>
                                 </div>
-                                <div class="col-3">
-                                    <div t-field="o.publisher_id"
+                                <div class="col-3" style="font-family:monospace;">
+                                    <span t-raw="o.publisher_id"
                                          t-options='{"widget": "contact",
                                          "field": ["address", "email", "phone", "website"],
                                          "no_marker": true}'/>
