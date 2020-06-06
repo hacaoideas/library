@@ -27,6 +27,7 @@
         'views/book_view.xml',
         'views/css_loader.xml',
         'views/book_list_template.xml',
+        'views/partner_list_template.xml',
         'security/library_security.xml',
         'security/ir.model.access.csv',
         'reports/library_book_reports.xml',

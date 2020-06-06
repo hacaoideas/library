@@ -10,3 +10,10 @@ class Books(http.Controller):
         return http.request.render(
             'library.book_list_template', {'books':books}
         )
+
+    @http.route('/partners', auth='user')
+    def list(self):
+        Partners = http.request.env['res.partner'].search([])
+        return http.request.render(
+            'library.partner_list_template', {'partners':Partners}
+        )

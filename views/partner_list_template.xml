@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="partner_list_template" name="partner list">
+        <div id="wrap" class="container">
+            <table style="border: 1px solid black;">
+                <tr style="font-weight: bold;">
+                    <td>Id</td>
+                    <td>Name</td>
+                </tr>
+                <t t-foreach="partners" t-as="o">
+                    <tr>
+                        <td><t t-esc="o.id"/></td>
+                        <td><t t-esc="o.name"/></td>
+                    </tr>
+                </t>
+            </table>
+        </div>
+    </template>
+</odoo>
