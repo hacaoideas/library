@@ -9,4 +9,7 @@ https://odooforbeginnersblog.wordpress.com/2017/03/02/how-to-use-api-constrains-
 
 Read and do this tutorial for the controller part
 https://minhng.info/odoo/controller-trong-odoo.html
+https://www.youtube.com/watch?v=eWo4d7B_UW8
+
+
 
